@@ -1,13 +1,8 @@
-<script>
-
-
-</script>
-
 <template>
 
 <header>
         <div class="navbar">
-            <a href=""><img src="" class="logo"></a>
+            <a href=""><img src="/src/assets/logo.png" class="logo"></a>
             <ul>
                 <li><a href="">Home</a></li>
                 <li><a href="">New Movies</a></li>
