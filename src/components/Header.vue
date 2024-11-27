@@ -1,21 +1,18 @@
 <template>
-    <header>
-        <div class="navbar">
-
-            <RouterLink to="/" class="logo-link"><img src="/src/assets/logo.png" class="logo" alt="Logo" /></RouterLink>
-            <ul>
-                <li><a href="">New Movies</a></li>
-                <li><a href="">TV Shows</a></li>
-                <li><a href="">Actors</a></li>
-                <li>
-                    <RouterLink to="/register" class="su-button">SIGN UP</RouterLink>
-                </li>
-                <li>
-                    <RouterLink to="/login" class="su-button">SIGN IN</RouterLink>
-                </li>
-            </ul>
-        </div>
-    </header>
+    <div class="navbar">
+        <RouterLink to="/" class="logo-link"><img src="/src/assets/logo.png" class="logo" alt="Logo" /></RouterLink>
+        <ul>
+            <li><a href="">New Movies</a></li>
+            <li><a href="">TV Shows</a></li>
+            <li><a href="">Actors</a></li>
+            <li>
+                <RouterLink to="/register" class="su-button">SIGN UP</RouterLink>
+            </li>
+            <li>
+                <RouterLink to="/login" class="su-button">SIGN IN</RouterLink>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <style scoped>

@@ -4,7 +4,7 @@ import Footer from '../components/Footer.vue';
 </script>
 
 <template>
-  <Header/>
+  <Header />
   <div class="hero">
     <div class="overlay">
       <div class="form-container">
@@ -20,7 +20,7 @@ import Footer from '../components/Footer.vue';
       </div>
     </div>
   </div>
-  <Footer/>
+  <Footer />
 </template>
 
 <style scoped>

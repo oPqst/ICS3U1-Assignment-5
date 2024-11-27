@@ -19,9 +19,7 @@ const moviesToShow = nowPlaying.results.slice(0, 9);
         <h3>{{ movie.title }}</h3>
         <p>Release Date: {{ movie.release_date }}</p>
         <a :href="`https://www.youtube.com/results?search_query=${movie.title}+trailer`" target="_blank"
-          class="trailer">
-          Watch the Trailer
-        </a>
+          class="trailer">Watch the Trailer</a>
       </div>
     </div>
   </div>

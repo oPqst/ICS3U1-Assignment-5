@@ -14,7 +14,4 @@ import Hero from '../components/Hero.vue'
 
 </template>
 
-<style scoped>
-
-
-</style>
+<style scoped></style>

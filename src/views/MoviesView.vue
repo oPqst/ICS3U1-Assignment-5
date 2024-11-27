@@ -5,12 +5,10 @@ import Genres from "../components/Genres.vue";
 </script>
 
 <template>
-<Header/>
-<Genres/>
-<Footer/>
+    <Header />
+    <Genres />
+    <Footer />
 
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

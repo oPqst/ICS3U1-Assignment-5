@@ -6,12 +6,10 @@ import Details from "../components/Details.vue";
 </script>
 
 <template>
-<Header/>
-<Details/>
-<Footer/>
+    <Header />
+    <Details />
+    <Footer />
 
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
