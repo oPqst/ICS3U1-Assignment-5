@@ -1,75 +1,94 @@
+<script setup>
+import axios from "axios";
+
+const { data: nowPlaying } = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${import.meta.env.VITE_TMDB_KEY}`);
+const moviesToShow = nowPlaying.results.slice(0, 9);
+</script>
+
 <template>
-    <div class="feature-heading">
-        <h1>🎬 Featured Movies 🎥</h1>
+  <div class="feature-heading">
+    <h1>🎬 Featured Movies 🎥</h1>
+  </div>
+
+  <div class="movie-container">
+    <div v-for="movie in moviesToShow" :key="movie.id" class="movie-item" @click="getMovieDetails(movie.id)">
+      <div class="movie-banners">
+        <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
+      </div>
+      <div class="movie-description">
+        <h3>{{ movie.title }}</h3>
+        <p>Release Date: {{ movie.release_date }}</p>
+        <a :href="`https://www.youtube.com/results?search_query=${movie.title}+trailer`" target="_blank"
+          class="trailer">
+          Watch the Trailer
+        </a>
+      </div>
     </div>
-
-    <div class="movie-container">
-        <div class="movie-item">
-            <div class="movie-banners">
-                <img src="/src/assets/transformers1.png">
-            </div>
-            <div class="movie-description">
-                <h3>Transformers</h3>
-                <p>Release Date: 2007-08-2</p>
-                <a class="trailer" href="https://www.youtube.com/watch?v=OS3W5QiMC0M">Watch the Trailer</a>
-            </div>
-        </div>
-
-        <div class="movie-item">
-            <div class="movie-banners">
-                <img src="/src/assets/transformers2.png">
-            </div>
-            <div class="movie-description">
-                <h3>Transformers: Rise of the Beasts</h3>
-                <p>Release Date: 2023-06-09</p>
-                <a class="trailer" href="https://www.youtube.com/watch?v=itnqEauWQZM">Watch the Trailer</a>
-            </div>
-        </div>
-
-        <div class="movie-item">
-            <div class="movie-banners">
-                <img src="/src/assets/transformers3.jpg">
-            </div>
-            <div class="movie-description">
-                <h3>Transformers: The Last Knight</h3>
-                <p>Release Date: 2017-06-21</p>
-                <a class="trailer" href="https://www.youtube.com/watch?v=6Vtf0MszgP8">Watch the Trailer</a>
-            </div>
-        </div>
-
-        <div class="movie-item">
-            <div class="movie-banners">
-                <img src="/src/assets/transformers4.jpg">
-            </div>
-            <div class="movie-description">
-                <h3>BumbleBee</h3>
-                <p>Release Date: 2018-12-21</p>
-                <a class="trailer" href="https://www.youtube.com/watch?v=lcwmDAYt22k">Watch the Trailer</a>
-            </div>
-        </div>
-
-        <div class="movie-item">
-            <div class="movie-banners">
-                <img src="/src/assets/transformers5.webp">
-            </div>
-            <div class="movie-description">
-                <h3>Transformers: Dark of the Moon</h3>
-                <p>Release Date: 2011-06-29</p>
-                <a class="trailer" href="https://www.youtube.com/watch?v=EkqdO8dhptc">Watch the Trailer</a>
-            </div>
-        </div>
-
-        <div class="movie-item">
-            <div class="movie-banners">
-                <img src="/src/assets/transformers6.jpg">
-            </div>
-            <div class="movie-description">
-                <h3>Transformers: Age of Extinction</h3>
-                <p>Release Date: 2014-06-27</p>
-                <a class="trailer" href="https://www.youtube.com/watch?v=T9bQCAWahLk">Watch the Trailer</a>
-            </div>
-        </div>
-    </div>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.feature-heading {
+  font-family: 'Monoton', cursive;
+  color: white;
+  background: linear-gradient(to bottom, #323232, rgba(0, 0, 0, 0.639));
+  text-align: center;
+  padding: 30px;
+}
+
+
+.movie-item {
+  margin: 15px;
+  border-radius: 20px;
+  width: 30%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.3s;
+  border: 3px solid #ffc1078d;
+}
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.movie-banners img {
+  width: 100%;
+  height: 500px;
+  transition: 0.3s;
+}
+
+.movie-item:hover {
+  transform: scale(1.03);
+}
+
+.movie-banners img:hover {
+  filter: brightness(50%);
+}
+
+.movie-description {
+  font-family: 'Oswald', sans-serif;
+  padding: 20px;
+  color: white;
+  background-color: rgba(28, 20, 20, 0.731);
+  text-align: center;
+}
+
+.trailer {
+  display: inline-block;
+  background: #ffcc00;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.trailer:hover {
+  background: #ffc107;
+  color: white;
+}
+</style>
