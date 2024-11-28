@@ -31,11 +31,8 @@ const handleLogin = () => {
   <Footer />
 </template>
 
-
 <style scoped>
-
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
 
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/hero.jpg);

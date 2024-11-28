@@ -9,8 +9,8 @@ const { data: nowPlaying } = await axios.get(`https://api.themoviedb.org/3/movie
     <h1>🎬 Featured Movies 🎥</h1>
   </div>
 
-  <div class="movie-container">
-    <div v-for="movie in nowPlaying.results" :key="movie.id" class="movie-item" @click="getMovieDetails(movie.id)">
+  <div class="movie-container"> 
+    <div v-for="movie in nowPlaying.results" :key="movie.id" class="movie-item">
       <div class="movie-banners">
         <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
       </div>

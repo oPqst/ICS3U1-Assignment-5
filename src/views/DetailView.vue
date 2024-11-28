@@ -5,13 +5,12 @@ import Details from "../components/Details.vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
-const movieId = Number(route.params.id);
 
 </script>
 
 <template>
     <Header />
-    <Details :movieId="movieId" />
+    <Details :movieId="Number(route.params.id)" />
     <Footer />
 </template>
 
