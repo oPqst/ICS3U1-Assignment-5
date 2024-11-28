@@ -32,7 +32,6 @@ const genresList = [
     <Header />
     <Genres :genres="genresList" />
     <Footer />
-
 </template>
 
 <style scoped></style>

@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, useRouter } from 'vue-router';
+import { useRouter } from 'vue-router';
 import { ref } from 'vue';
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
@@ -33,6 +33,10 @@ const handleLogin = () => {
 
 
 <style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/hero.jpg);
   height: 90vh;
@@ -56,10 +60,12 @@ const handleLogin = () => {
   width: 90%;
   max-width: 400px;
   color: white;
+
+
 }
 
 .form-container h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Bebas Neue';
   color: #FFD700;
   margin-bottom: 20px;
 }
@@ -73,6 +79,8 @@ const handleLogin = () => {
   background: transparent;
   color: white;
   font-size: 16px;
+  font-family: 'Bebas Neue';
+
 }
 
 .input-field::placeholder {
@@ -95,6 +103,8 @@ const handleLogin = () => {
   transition: 0.3s;
   cursor: pointer;
   width: 100%;
+  font-family: 'Bebas Neue';
+
 }
 
 .button.login:hover {

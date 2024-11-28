@@ -13,7 +13,6 @@ const movieId = Number(route.params.id);
     <Header />
     <Details :movieId="movieId" />
     <Footer />
-
 </template>
 
 <style scoped></style>

@@ -1,15 +1,17 @@
 <script setup>
 import axios from "axios";
+import { ref, onMounted } from "vue";
 
-const props = defineProps({movieId: {type:Number,}});
+const props = defineProps({ movieId: { type: Number, required: true } });
+const response = ref(null)
 
-const response = await axios.get(`https://api.themoviedb.org/3/movie/${props.movieId}?api_key=${import.meta.env.VITE_TMDB_KEY}&append_to_response=videos`);
-
-
+onMounted(async () => {
+    response.value = await axios.get(`https://api.themoviedb.org/3/movie/${props.movieId}?api_key=${import.meta.env.VITE_TMDB_KEY}&append_to_response=videos`);
+})
 </script>
 
 <template>
-    <div class="movie-detail">
+    <div v-if="response" class="movie-detail">
         <div class="movie-poster-container">
             <img :src="`https://image.tmdb.org/t/p/w500${response.data.poster_path}`" alt="Movie Poster"
                 class="movie-poster" />
@@ -19,14 +21,14 @@ const response = await axios.get(`https://api.themoviedb.org/3/movie/${props.mov
         <div class="movie-details">
             <h1 class="movie-title">{{ response.data.original_title }}</h1>
             <p class="movie-overview">{{ response.data.overview }}</p>
-            <p class="movie-release-date">Release Date:  {{ response.data.release_date }}</p>
+            <p class="movie-release-date">Release Date: 📆 {{ response.data.release_date }}</p>
             <p class="origin-country">Origin Country: 🗺️ {{ response.data.origin_country[0] }}</p>
             <p class="vote-average">Vote Average: ⭐ {{ response.data.vote_average }}</p>
             <a class="movie-site" :href="response.data.homepage" target="_blank">Official Movie Site</a>
         </div>
     </div>
 
-    <div class="trailers">
+    <div v-if="response" class="trailers">
         <h2 class="trailers-title">Trailers</h2>
         <div class="trailers-container">
             <div v-for="trailer in response.data.videos.results" :key="trailer.id" class="trailer-tile">
@@ -39,6 +41,8 @@ const response = await axios.get(`https://api.themoviedb.org/3/movie/${props.mov
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .movie-detail {
     display: flex;
     flex-wrap: wrap;
@@ -50,7 +54,7 @@ const response = await axios.get(`https://api.themoviedb.org/3/movie/${props.mov
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     color: #f5f5f5;
-    font-family: 'Arial', cursive;
+    font-family: 'Bebas Neue';
 }
 
 .movie-poster-container {

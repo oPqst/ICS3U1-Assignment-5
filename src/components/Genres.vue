@@ -51,12 +51,16 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .genre-heading {
     font-family: 'Monoton', cursive;
     color: white;
     background: linear-gradient(to bottom, #323232, rgba(0, 0, 0, 0.639));
     text-align: center;
     padding: 30px;
+
 }
 
 .genre-selector {
@@ -66,13 +70,19 @@ onMounted(async () => {
     width: 100%;
 }
 
+.genre-selector select option{
+    background-color:#ffcc00 ;
+    color: black;
+} 
+
 .genre-selector select {
     padding: 12px;
     font-size: 1.1rem;
     border-radius: 5px;
     background-color: #ffcc002f;
-    color: black;
+    color: white;
     border: 2px solid #ffcc00;
+    text-align: center;
     width: 250px;
     transition: background-color 0.3s, border 0.3s;
 }
@@ -86,6 +96,7 @@ onMounted(async () => {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
+
 }
 
 .movie-item {
@@ -119,6 +130,8 @@ onMounted(async () => {
     color: white;
     background-color: rgba(28, 20, 20, 0.731);
     text-align: center;
+    font-family: 'Bebas Neue';
+
 }
 
 .trailer {

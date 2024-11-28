@@ -25,6 +25,8 @@ const { data: nowPlaying } = await axios.get(`https://api.themoviedb.org/3/movie
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .feature-heading {
   font-family: 'Monoton', cursive;
   color: white;
@@ -66,11 +68,12 @@ const { data: nowPlaying } = await axios.get(`https://api.themoviedb.org/3/movie
 }
 
 .movie-description {
-  font-family: 'Oswald', sans-serif;
   padding: 20px;
   color: white;
   background-color: rgba(28, 20, 20, 0.731);
   text-align: center;
+  font-family: 'Bebas Neue';
+
 }
 
 .trailer {

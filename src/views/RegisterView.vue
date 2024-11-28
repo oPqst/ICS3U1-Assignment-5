@@ -6,22 +6,24 @@ import Footer from '../components/Footer.vue';
 <template>
   <Header />
   <div class="hero">
-      <div class="form-container">
-        <h2>Create an Account</h2>
-        <form>
-          <input type="text" placeholder="First Name" class="input-field" required>
-          <input type="text" placeholder="Last Name" class="input-field" required>
-          <input type="email" placeholder="Email" class="input-field" required>
-          <input type="password" placeholder="Password" class="input-field" required>
-          <input type="password" placeholder="Re-enter Password" class="input-field" required>
-          <button type="submit" class="button register">Register</button>
-        </form>
-      </div>
+    <div class="form-container">
+      <h2>Create an Account</h2>
+      <form>
+        <input type="text" placeholder="First Name" class="input-field" required>
+        <input type="text" placeholder="Last Name" class="input-field" required>
+        <input type="email" placeholder="Email" class="input-field" required>
+        <input type="password" placeholder="Password" class="input-field" required>
+        <input type="password" placeholder="Re-enter Password" class="input-field" required>
+        <button type="submit" class="button register">Register</button>
+      </form>
+    </div>
   </div>
   <Footer />
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/hero.jpg);
   height: 90vh;
@@ -45,10 +47,11 @@ import Footer from '../components/Footer.vue';
   width: 90%;
   max-width: 400px;
   color: white;
+
 }
 
 .form-container h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Bebas Neue';
   color: #FFD700;
   margin-bottom: 20px;
 }
@@ -62,6 +65,8 @@ import Footer from '../components/Footer.vue';
   background: transparent;
   color: white;
   font-size: 16px;
+  font-family: 'Bebas Neue';
+
 }
 
 .input-field::placeholder {
@@ -84,6 +89,8 @@ import Footer from '../components/Footer.vue';
   transition: 0.3s;
   cursor: pointer;
   width: 100%;
+  font-family: 'Bebas Neue';
+
 }
 
 .button.register:hover {
