@@ -19,15 +19,13 @@ const handleLogin = () => {
 <template>
   <Header />
   <div class="hero">
-    <div class="overlay">
-      <div class="form-container">
-        <h2>Login to Your Account</h2>
-        <form @submit.prevent="handleLogin">
-          <input type="email" placeholder="Email" class="input-field" required />
-          <input v-model="password" type="password" placeholder="Password" class="input-field" required />
-          <button type="submit" class="button login">Login</button>
-        </form>
-      </div>
+    <div class="form-container">
+      <h2>Login to Your Account</h2>
+      <form @submit.prevent="handleLogin">
+        <input type="email" placeholder="Email" class="input-field" required />
+        <input v-model="password" type="password" placeholder="Password" class="input-field" required />
+        <button type="submit" class="button login">Login</button>
+      </form>
     </div>
   </div>
   <Footer />
@@ -45,18 +43,8 @@ const handleLogin = () => {
   align-items: center;
   text-align: center;
   position: relative;
+  opacity: 70%;
   color: white;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
 }
 
 .form-container {

@@ -6,7 +6,6 @@ import Footer from '../components/Footer.vue';
 <template>
   <Header />
   <div class="hero">
-    <div class="overlay">
       <div class="form-container">
         <h2>Create an Account</h2>
         <form>
@@ -18,7 +17,6 @@ import Footer from '../components/Footer.vue';
           <button type="submit" class="button register">Register</button>
         </form>
       </div>
-    </div>
   </div>
   <Footer />
 </template>
@@ -34,52 +32,8 @@ import Footer from '../components/Footer.vue';
   align-items: center;
   text-align: center;
   position: relative;
+  opacity: 70%;
   color: white;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-}
-
-.navbar {
-  background-color: transparent;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  position: absolute;
-  top: 0;
-}
-
-.navbar h1 {
-  font-family: 'Montserrat', sans-serif;
-  color: #FFD700;
-  margin-left: 20px;
-}
-
-.navbar .login {
-  background-color: transparent;
-  color: white;
-  border: 2px solid #E6B800;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  transition: 0.3s;
-  border-radius: 30px;
-}
-
-.navbar .login:hover {
-  background: #E6B800;
-  color: black;
-  transform: scale(1.2);
 }
 
 .form-container {

@@ -1,33 +1,24 @@
 <script setup>
 import axios from 'axios';
+import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
-import { ref } from 'vue';
 
-const genres = [
-    { genre: 'Action', id: 28 },
-    { genre: 'Adventure', id: 12 },
-    { genre: 'Animation', id: 16 },
-    { genre: 'Comedy', id: 35 },
-    { genre: 'Drama', id: 18 }
-];
-
-const selectedGenre = ref(null);
-const moviesToShow = ref([]);
+const props = defineProps(["genres"]);
 const router = useRouter();
+const selectedGenre = ref(12);
+const response = ref(null);
 
-async function fetchMovies() {
-    if (selectedGenre.value) {
-        const { data } = await axios.get(
-            `https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_TMDB_KEY}&with_genres=${selectedGenre.value}`
-        );
-        moviesToShow.value = data.results.slice(0, 9);
-    }
+async function getMovieByGenre() {
+    response.value = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_TMDB_KEY}&with_genres=${selectedGenre.value}`);
 }
 
 function getMovieDetails(id) {
     router.push(`/movies/${id}`);
 }
 
+onMounted(async () => {
+    response.value = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_TMDB_KEY}&with_genres=${selectedGenre.value}`);
+})
 </script>
 
 <template>
@@ -36,16 +27,14 @@ function getMovieDetails(id) {
     </div>
 
     <div class="genre-selector">
-        <select v-model="selectedGenre" @change="fetchMovies">
-            <option value="" disabled>Select a Genre</option>
-            <option v-for="genre in genres" :key="genre.id" :value="genre.id">
-                {{ genre.genre }}
-            </option>
+        <select v-model="selectedGenre" @change="getMovieByGenre">
+            <option v-for="genre of genres" :value="genre.id">{{ genre.genreName }}</option>
         </select>
     </div>
 
     <div class="movie-container">
-        <div v-for="movie in moviesToShow" :key="movie.id" class="movie-item" @click="getMovieDetails(movie.id)">
+        <div v-if="response" v-for="movie in response.data.results" :key="movie.id" class="movie-item"
+            @click="getMovieDetails(movie.id)">
             <div class="movie-banners">
                 <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
             </div>

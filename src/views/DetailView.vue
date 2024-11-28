@@ -1,13 +1,17 @@
 <script setup>
-import { useRouter } from "vue-router";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 import Details from "../components/Details.vue";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+const movieId = Number(route.params.id);
+
 </script>
 
 <template>
     <Header />
-    <Details />
+    <Details :movieId="movieId" />
     <Footer />
 
 </template>

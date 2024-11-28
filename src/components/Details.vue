@@ -1,10 +1,11 @@
 <script setup>
 import axios from "axios";
-import { useRoute } from "vue-router";
 
-const route = useRoute();
-const response = await axios.get(`https://api.themoviedb.org/3/movie/${route.params.id}?api_key=${import.meta.env.VITE_TMDB_KEY}&append_to_response=videos`);
-console.log(response.data);
+const props = defineProps({movieId: {type:Number,}});
+
+const response = await axios.get(`https://api.themoviedb.org/3/movie/${props.movieId}?api_key=${import.meta.env.VITE_TMDB_KEY}&append_to_response=videos`);
+
+
 </script>
 
 <template>
@@ -18,8 +19,8 @@ console.log(response.data);
         <div class="movie-details">
             <h1 class="movie-title">{{ response.data.original_title }}</h1>
             <p class="movie-overview">{{ response.data.overview }}</p>
-            <p class="movie-release-date">Release Date: {{ response.data.release_date }}</p>
-            <p class="origin-country">Origin Country: {{ response.data.origin_country[0] }}</p>
+            <p class="movie-release-date">Release Date:  {{ response.data.release_date }}</p>
+            <p class="origin-country">Origin Country: 🗺️ {{ response.data.origin_country[0] }}</p>
             <p class="vote-average">Vote Average: ⭐ {{ response.data.vote_average }}</p>
             <a class="movie-site" :href="response.data.homepage" target="_blank">Official Movie Site</a>
         </div>
