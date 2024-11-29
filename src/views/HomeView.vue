@@ -6,10 +6,10 @@ import Hero from '../components/Hero.vue'
 </script>
 
 <template>
-    <Header />
-    <Hero />
-    <Feature />
-    <Footer />
+  <Header />
+  <Hero />
+  <Feature />
+  <Footer />
 </template>
 
 <style scoped></style>

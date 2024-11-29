@@ -57,8 +57,6 @@ const handleLogin = () => {
   width: 90%;
   max-width: 400px;
   color: white;
-
-
 }
 
 .form-container h2 {
@@ -77,7 +75,6 @@ const handleLogin = () => {
   color: white;
   font-size: 16px;
   font-family: 'Bebas Neue';
-
 }
 
 .input-field::placeholder {
@@ -101,7 +98,6 @@ const handleLogin = () => {
   cursor: pointer;
   width: 100%;
   font-family: 'Bebas Neue';
-
 }
 
 .button.login:hover {
