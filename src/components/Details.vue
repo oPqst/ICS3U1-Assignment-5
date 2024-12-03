@@ -3,11 +3,11 @@ import axios from "axios";
 import { ref, onMounted } from "vue";
 
 const props = defineProps({ movieId: { type: Number, required: true } });
-const response = ref(null)
+const response = ref(null);
 
 onMounted(async () => {
   response.value = await axios.get(`https://api.themoviedb.org/3/movie/${props.movieId}?api_key=${import.meta.env.VITE_TMDB_KEY}&append_to_response=videos`);
-})
+});
 </script>
 
 <template>

@@ -19,7 +19,7 @@ numbers.value = (() => {
 
 onMounted(async () => {
   movie.value = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${import.meta.env.VITE_TMDB_KEY}`);
-})
+});
 </script>
 
 <template>

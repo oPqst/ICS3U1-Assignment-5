@@ -1,3 +1,7 @@
+<script setup>
+import { RouterLink } from 'vue-router';
+</script>
+
 <template>
   <div class="navbar">
     <RouterLink to="/" class="logo-link"><img src="/src/assets/logo.png" class="logo" /></RouterLink>
