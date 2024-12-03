@@ -106,7 +106,6 @@ onMounted(async () => {
 .vote-average {
   font-size: 1.1rem;
   color: #ffcc00;
-
 }
 
 .movie-site {

@@ -9,8 +9,8 @@ const genresList = [
     genreName: "Action"
   },
   {
-    id: 18,
-    genreName: "Drama"
+    id: 10752,
+    genreName: "War"
   },
   {
     id: 14,

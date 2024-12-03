@@ -47,7 +47,6 @@ import Footer from '../components/Footer.vue';
   width: 90%;
   max-width: 400px;
   color: white;
-
 }
 
 .form-container h2 {
@@ -66,7 +65,6 @@ import Footer from '../components/Footer.vue';
   color: white;
   font-size: 16px;
   font-family: 'Bebas Neue';
-
 }
 
 .input-field::placeholder {
@@ -90,7 +88,6 @@ import Footer from '../components/Footer.vue';
   cursor: pointer;
   width: 100%;
   font-family: 'Bebas Neue';
-
 }
 
 .button.register:hover {

@@ -1,8 +1,10 @@
 <template>
   <div class="navbar">
-    <RouterLink to="/" class="logo-link"><img src="/src/assets/logo.png" class="logo" alt="Logo" /></RouterLink>
+    <RouterLink to="/" class="logo-link"><img src="/src/assets/logo.png" class="logo" /></RouterLink>
     <ul>
-      <li><a href="">New Movies</a></li>
+      <li>
+        <RouterLink to="/movies">New Movies</RouterLink>
+      </li>
       <li><a href="">TV Shows</a></li>
       <li><a href="">Actors</a></li>
       <li>

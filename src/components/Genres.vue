@@ -43,8 +43,7 @@ onMounted(async () => {
         <p>Release Date: {{ movie.release_date }}</p>
         <a :href="`https://www.youtube.com/results?search_query=${movie.title}+trailer`" target="_blank"
           class="trailer">
-          Watch the Trailer
-        </a>
+          Watch the Trailer</a>
       </div>
     </div>
   </div>
@@ -59,7 +58,6 @@ onMounted(async () => {
   background: linear-gradient(to bottom, #323232, rgba(0, 0, 0, 0.639));
   text-align: center;
   padding: 30px;
-
 }
 
 .genre-selector {
@@ -95,7 +93,6 @@ onMounted(async () => {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px;
-
 }
 
 .movie-item {
@@ -130,7 +127,6 @@ onMounted(async () => {
   background-color: rgba(28, 20, 20, 0.731);
   text-align: center;
   font-family: 'Bebas Neue';
-
 }
 
 .trailer {
