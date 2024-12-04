@@ -17,7 +17,6 @@ onMounted(async () => {
         class="movie-poster" />
       <p class="tag-line">{{ response.data.tagline }}</p>
     </div>
-
     <div class="movie-details">
       <h1 class="movie-title">{{ response.data.original_title }}</h1>
       <p class="movie-overview">{{ response.data.overview }}</p>
