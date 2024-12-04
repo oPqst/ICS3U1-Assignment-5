@@ -27,7 +27,7 @@ onMounted(async () => {
     <h1>🎬 Featured Movies 🎥</h1>
   </div>
 
-  <div class="movie-container" v-if="movie">
+  <div v-if="movie" class="movie-container">
     <div v-for="number in numbers" :key="movie.data.results[number].id" class="movie-item">
       <div class="movie-banners">
         <img :src="`https://image.tmdb.org/t/p/w500${movie.data.results[number].poster_path}`" :alt="movie.title" />
